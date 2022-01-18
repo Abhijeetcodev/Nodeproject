@@ -14,6 +14,7 @@ var forecast = require('./utlis/forecast');
 
 var geocode = require('./utlis/gecode');
 
+var port = process.env.PORT || 3000;
 hbs.registerPartials(partialPath);
 var publicpath = path.join(__dirname, '../public');
 app.set("view engine", 'hbs');
@@ -87,6 +88,6 @@ app.get('/help/*', function (req, res) {
 app.get("*", function (req, res) {
   res.render('404page');
 });
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log('Server is up on port 3000,');
 });

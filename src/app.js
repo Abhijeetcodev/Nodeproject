@@ -7,6 +7,7 @@ const partialPath = path.join(__dirname,'../templates/partials')
 const app = express()
 const forecast = require('./utlis/forecast');
 const geocode = require('./utlis/gecode');
+const port = process.env.PORT || 3000
 
 hbs.registerPartials(partialPath)
 
@@ -99,6 +100,6 @@ app.get("*",(req,res)=>{
 
 })
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('Server is up on port 3000,')
 })
